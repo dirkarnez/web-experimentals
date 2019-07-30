@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         console.log("loaded");
+         navigator.usb.getDevices().then(function (devices) {
+            console.log("Total devices: " + devices.length);
+            devices.forEach(function (device) {
+               console.log("Product name: " + device.productName + ", serial number " + device.serialNumber);
+            });
+         }).catch(function (e) {
+            return console.log(e);
+         });
+
+      });
+   </script>
+</body>
+</html>
